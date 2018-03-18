@@ -1,0 +1,26 @@
+Bensin 1848 30k DONE 15/03/2018
+Bensin 1848 30k DONE 15/03/2018
+
+-40
+
+Pak Miko
+
+*INFO MOBIL
+Innova Reborn  20 hari       (16/03 - 5/04)
+Av Grey        2 hari        (16/03 - 17/04)
+Av Grand Putih 1 hari        (16/03 - 17/03)   
+Av Grand Black A/T           ()
+
+
+INSERT INTO `mobil` (`id_mobil`, `tipe`, `plat_nomor`, `warna`, `transmisi`, `harga`)
+VALUES
+    (11,'Grand New Avanza','AB 7166 UZ','Hitam','M/T','350000'),
+    (12,'Xenia','AB 7167 UZ','Silver','M/T','325000'),
+    (13,'Brio','AB 7168 UZ','Putih','A/T','275000'),
+    (14,'Avanza','AB 7169 UZ','Hitam','A/T','275000'),
+    (15,'Grand New Innova','AB 7170 UZ','Gray','A/T','375000'),
+    (16,'Innova Reborn','AB 7171 UZ','Putih','A/T','275000'),
+    (17,'Grand New Avanza','AB 7172 UZ','Hitam','A/T','350000'),
+    (18,'Grand New Avanza','AB 7173 UZ','Gray','A/T','350000'),
+    (19,'Grand New Avanza','AB 7174 UZ','Silver','A/T','350000'),
+    (20,'Grand New Avanza','AB 7175 UZ','Putih','A/T','350000')
