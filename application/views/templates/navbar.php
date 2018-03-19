@@ -1,4 +1,4 @@
-<header class="mdl-layout__header green-tea">
+<header class="mdl-layout__header dark-green-tea mdl-shadow--2dp">
   <div class="mdl-layout__header-row">
     <!-- Title -->
     <span class="mdl-layout-title">AMANA TRANSPORT</span>

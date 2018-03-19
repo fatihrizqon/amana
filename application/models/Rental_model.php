@@ -61,4 +61,18 @@ class Rental_model extends CI_Model {
         return;
         
     }
+
+    public function week(){
+        // Get Last Month
+        $date = new DateTime();
+        $date->modify("last day of previous week");
+        $last_week = $date->format("Y-m-d");
+
+        // Your Query
+        $this->db->select('*');
+        $this->db->from('rental');
+        $this->db->where('tanggal_sewa', $last_week);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }

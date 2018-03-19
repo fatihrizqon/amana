@@ -49,15 +49,17 @@ h1,h2,h3,h4,h5,h6{
 .dark-green-tea{
   /*33691E*/
   background-color: #33691E;
-  color: #F1F839 ;
+  color: #FFF ;
 }
+
 
 .main-layout-transparent {
   font-family: 'Quicksand', sans-serif;
+  color:#FFF;
 }
 .main-layout-transparent .mdl-layout__header,
 .main-layout-transparent .mdl-layout__drawer-button {
-  color: white;
+  color:#FFF;
   background-color: #33691E;
 }
 
