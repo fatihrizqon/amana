@@ -11,16 +11,17 @@ class RentalController extends CI_Controller {
         $this->load->helper('url_helper');
     }
 
-	public function index()
+  public function index()
 	{
     $data['rental'] = $this->Rental_model->getData();
     $data['mobil']  = $this->Mobil_model->getData();
+    $data['today']  = $this->Rental_model->today();
     $data['title']  = "Rental";
     $this->load->view('templates/header',$data);
     $this->load->view('templates/navbar',$data);
     $this->load->view('rental/index', $data);
     $this->load->view('templates/footer',$data);
-	}
+  }
 
   public function report(){
     $data['rental'] = $this->Rental_model->getData();

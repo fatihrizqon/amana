@@ -1,20 +1,37 @@
 <main class="mdl-layout__content">
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col" align="center">
-    <div class="data-rental-container">
-      <label for=""></label>Hari Ini</p>
-      <table class="mdl-data-table mdl-js-data-table">
-        <thead>
-          <th class="mdl-data-table__cell--non-numeric">Rental</th>
-          <th class="mdl-data-table__cell--non-numeric">Pemasukan</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="mdl-data-table__cell--non-numeric">2</td>
-            <td class="mdl-data-table__cell--non-numeric">2000000</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="data-rental-container mdl-shadow--2dp">
+      <br>
+      <label for=""></label><b>Data :</b> 
+      <?php 
+      echo date('l jS \of F Y h:i:s A'); 
+      ?></p>
+      <ul class="demo-list-control mdl-list">
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons  mdl-list__item-avatar">person</i>
+            Jumlah Rental :
+          </span>
+          <span class="mdl-list__item-secondary-action">
+          <?php echo $this->db->count_all('rental'); ?>
+          </span>
+        </li>
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons  mdl-list__item-avatar">money</i>
+            Total Pemasukan :
+          </span>
+          <span class="mdl-list__item-secondary-action">
+          <?php echo "Rp."."200000".",-"; ?>
+          </span>
+        </li>
+      </ul>
+
+
+
+
+
     </div>
   </div>
   <div class="mdl-cell mdl-cell--4-col" align="center">

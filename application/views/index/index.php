@@ -3,7 +3,7 @@
     <div class="mdl-layout-spacer"><!-- Spacer --></div>
     <div class="mdl-cell mdl-cell--4-col">
       <div class="rental-container">
-        <h4 align="center">Reservasi Rental</h4>
+        <h4 align="center">Reservasi</h4>
         <hr>
         <form role="form" method="post" action="<?php echo base_url('rental/create');?>">
           <md-input-container flex="200">
@@ -50,12 +50,14 @@
             </div>
           </md-input-container>
           <br>
-          <label for="">Sewa</label>
-          <input type="datetime-local" name="tanggal_sewa" id="">
+          <md-input-container>
+            <md-datepicker name='tanggal_sewa' ng-model="rental.tanggal_sewa" md-placeholder="Enter date"></md-datepicker>
+          </md-input-container>
           <br>
           <br>
-          <label for="">Kembali</label>
-          <input type="datetime-local" name="tanggal_kembali" id="">
+          <md-input-container>
+            <md-datepicker name='tanggal_kembali' ng-model="rental.tanggal_kembali" md-placeholder="Enter date"></md-datepicker>
+          </md-input-container>
           <br>
           <div class="" align="right">
             <md-button type='submit' class="md-raised md-primary green-tea">Simpan</md-button>

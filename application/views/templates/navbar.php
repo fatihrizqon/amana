@@ -8,14 +8,14 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="<?php echo base_url(); ?>">Beranda</a>
       <a class="mdl-navigation__link" href="<?php echo base_url()."mobil"; ?>">Mobil</a>
-      <a class="mdl-navigation__link" href="<?php echo base_url()."rental"; ?>">Data Rental</a>
+      
     </nav>
   </div>
 </header>
 <div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Title</span>
+  <span class="mdl-layout-title">AMN-TRANS</span>
   <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="">Data Rental</a>
+    <a class="mdl-navigation__link" href="<?php echo base_url()."rental"; ?>">Data Rental</a>
     <a class="mdl-navigation__link" href="">Data Kursus Mengemudi</a>
     <a class="mdl-navigation__link" href="">Data Kursis Baca Al-Qur'an</a>
     <a class="mdl-navigation__link" href="">Data Keuangan</a>

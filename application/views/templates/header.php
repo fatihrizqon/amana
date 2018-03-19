@@ -126,10 +126,18 @@ h1,h2,h3,h4,h5,h6{
 
 <body ng-app="myApp" ng-cloak>
   <div class="
-  mdl-layout mdl-js-layout
+  mdl-layout 
+  <?php 
+    if($title!='Beranda'){
+        echo " mdl-layout--fixed-drawer";
+    }else{
+        echo " mdl-js-layout";
+    }
+    ?>
   mdl-layout--fixed-header
   ">
 
+<!-- <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> -->
 
 <!--
 mdl-layout mdl-js-layout

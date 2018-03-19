@@ -53,4 +53,12 @@ class Rental_model extends CI_Model {
         $this->db->delete('rental');
         return;
     }
+
+    public function today(){
+        $date = date('Y-m-d H:i:s');
+        $this->db->where('tanggal_sewa', $date);
+        $this->db->get('rental');
+        return;
+        
+    }
 }
