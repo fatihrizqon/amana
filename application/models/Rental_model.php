@@ -9,7 +9,7 @@ class Rental_model extends CI_Model {
     {
         $this->db->select ( '*' );
         $this->db->from ( 'rental' );
-        $this->db->join ( 'mobil', 'mobil.id_mobil = rental.id_mobil');
+        $this->db->join ( 'kendaraan', 'kendaraan.id_kendaraan = rental.id_kendaraan');
 
         $query = $this->db->get();
         return $query->result_array();
@@ -26,7 +26,7 @@ class Rental_model extends CI_Model {
     $data = array(
         'nama' => $this->input->post('nama'),
         'telepon' => $this->input->post('telepon'),
-        'id_mobil' => $this->input->post('id_mobil'),
+        'id_kendaraan' => $this->input->post('id_kendaraan'),
         'tanggal_pesan' => $this->input->post('tanggal_pesan'),
         'pembayaran' => $this->input->post('pembayaran'),
         'tanggal_sewa' => $this->input->post('tanggal_sewa'),

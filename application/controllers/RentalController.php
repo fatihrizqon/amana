@@ -7,14 +7,14 @@ class RentalController extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Rental_model');
-        $this->load->model('Mobil_model');
+        $this->load->model('Kendaraan_model');
         $this->load->helper('url_helper');
     }
 
   public function index()
 	{
     $data['rental'] = $this->Rental_model->getData();
-    $data['mobil']  = $this->Mobil_model->getData();
+    $data['kendaraan']  = $this->Kendaraan_model->getData();
     $data['today']  = $this->Rental_model->today();
     $data['title']  = "Rental";
     $this->load->view('templates/header',$data);
@@ -39,7 +39,7 @@ class RentalController extends CI_Controller {
 
     public function read($id_rental){
 		$data['rental'] = $this->Rental_model->read($id_rental);
-        $data['mobil'] = $this->Mobil_model->getData();
+        $data['kendaraan'] = $this->Kendaraan_model->getData();
 		$this->load->view('rental/read', $data);
     }
 

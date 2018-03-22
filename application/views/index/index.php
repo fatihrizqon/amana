@@ -2,7 +2,7 @@
   <div class="mdl-grid">
     <div class="mdl-layout-spacer"><!-- Spacer --></div>
     <div class="mdl-cell mdl-cell--4-col">
-      <div class="rental-container">
+      <div class="white-container mdl-shadow--2dp">
         <h4 align="center">Reservasi</h4>
         <hr>
         <form role="form" method="post" action="<?php echo base_url('rental/create');?>">
@@ -24,20 +24,27 @@
           <br>
           <md-input-container flex="200">
             <label>Mobil</label>
-            <md-select name="id_mobil" ng-model="rental.mobil" required>
-              <?php foreach($mobil as $data){ ?>
-                <md-option value="<?php echo $data['id_mobil']; ?>">
+            <md-select name="id_kendaraan" ng-model="rental.kendaraan" required>
+              <?php foreach($kendaraan as $data){ ?>
+                <md-option value="<?php echo $data['id_kendaraan']; ?>">
                   <?php
-                   echo $data['tipe'];
-                   echo ' '.$data['warna'];
-                   echo ' '.$data['plat_nomor'];
-                   echo ' '.$data['transmisi'];
+                  if($data['harga']!=0){
+                    echo $data['tipe'];
+                    echo ' '.$data['warna'];
+                    echo ' '.$data['plat_nomor'];
+                    echo ' '.$data['transmisi'];
+                  }
                   ?>
                 </md-option>
               <?php } ?>
             </md-select>
           </md-input-container>
           <br>
+          <md-input-container>
+            <label for="">Tanggal Pesan </label>
+            <input type="text" name="" id="" disabled>
+          </md-input-container>
+
           <md-input-container>
             <md-datepicker name='tanggal_pesan' ng-model="rental.tanggal_pesan" md-placeholder="Enter date"></md-datepicker>
           </md-input-container>
@@ -51,12 +58,13 @@
           </md-input-container>
           <br>
           <md-input-container>
-            <md-datepicker name='tanggal_sewa' ng-model="rental.tanggal_sewa" md-placeholder="Enter date"></md-datepicker>
+            <label for="tanggal_sewa">Tanggal Sewa :</label>
+            <input type="datetime-local" name="tanggal_sewa" id="tanggal_sewa">
           </md-input-container>
           <br>
-          <br>
           <md-input-container>
-            <md-datepicker name='tanggal_kembali' ng-model="rental.tanggal_kembali" md-placeholder="Enter date"></md-datepicker>
+            <label for="tanggal_kembali">Tanggal Kembali :</label>
+            <input type="datetime-local" name="tanggal_kembali" id="tanggal_kembali">
           </md-input-container>
           <br>
           <div class="" align="right">

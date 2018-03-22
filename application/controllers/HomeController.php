@@ -7,14 +7,14 @@ class HomeController extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Rental_model');
-        $this->load->model('Mobil_model');
+        $this->load->model('Kendaraan_model');
         $this->load->helper('url_helper');
     }
 
 	public function index()
 	{
         $data['rental'] = $this->Rental_model->getData();
-        $data['mobil'] = $this->Mobil_model->getData();
+        $data['kendaraan'] = $this->Kendaraan_model->getData();
         $data['title'] = "Beranda";
         $this->load->view('templates/header',$data);
 		$this->load->view('templates/navbar',$data);
@@ -32,7 +32,7 @@ class HomeController extends CI_Controller {
 
     public function editRental($id_rental){
         $data['rental'] = $this->Rental_model->getData();
-        $data['mobil'] = $this->Mobil_model->getData();
+        $data['kendaraan'] = $this->Kendaraan_model->getData();
 		$this->load->view('rental/edit', $data);
         
     }

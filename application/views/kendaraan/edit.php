@@ -16,6 +16,10 @@
     <input type="text" name="transmisi" value="<?php echo $mobil['transmisi']; ?>">
     <br>
 
+    <label for="">Tahun</label>
+    <input type="text" name="tahun" value="<?php echo $mobil['tahun']; ?>">
+    <br>
+
     <label for="">Harga</label>
     <input type="text" name="harga" value="<?php echo $mobil['harga']; ?>">
 

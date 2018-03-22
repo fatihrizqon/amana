@@ -36,22 +36,38 @@ h1,h2,h3,h4,h5,h6{
   background-color: #F1F839;
   color: #33691E ;
 }
+.super-light-green-txt{
+  /*F1F839*/
+  color: #F1F839 ;
+}
 .light-green-tea{
   /*C5E1A5*/
   background-color: #C5E1A5;
   color: #8BC34A ;
+}
+.light-green-txt{
+  /*C5E1A5*/
+  color: #C5E1A5 ;
 }
 .green-tea{
   /*8BC34A*/
   background-color: #8BC34A;
   color: #FFF ;
 }
+
+.green-tea-txt{
+  /*8BC34A*/
+  color: #8BC34A ;
+}
 .dark-green-tea{
   /*33691E*/
   background-color: #33691E;
   color: #FFF ;
 }
-
+.dark-green-txt{
+  /*33691E*/
+  color: #33691E ;
+}
 
 .main-layout-transparent {
   font-family: 'Quicksand', sans-serif;
@@ -63,11 +79,11 @@ h1,h2,h3,h4,h5,h6{
   background-color: #33691E;
 }
 
-.data-rental-container{
+.data-white-container{
   background-color: #FFF;
   padding: 5px;
 }
-.rental-container{
+.white-container{
   padding: 20px;
   background-color: #FFF;
 }

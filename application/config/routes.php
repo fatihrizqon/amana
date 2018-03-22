@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['mobil/update/(:any)']   = 'MobilController/update/$1';
-$route['mobil/read/(:any)']     = 'MobilController/read/$1';
-$route['mobil/delete/(:any)']   = 'MobilController/delete/$1';
-$route['mobil/create']          = 'MobilController/create';
-$route['mobil']                 = 'MobilController';
+$route['kendaraan/update/(:any)']   = 'KendaraanController/update/$1';
+$route['kendaraan/read/(:any)']     = 'KendaraanController/read/$1';
+$route['kendaraan/delete/(:any)']   = 'KendaraanController/delete/$1';
+$route['kendaraan/create']          = 'KendaraanController/create';
+$route['kendaraan']                 = 'KendaraanController';
 
 $route['rental/update/(:any)']  = 'RentalController/update/$1';
 $route['rental/read/(:any)']    = 'RentalController/read/$1';

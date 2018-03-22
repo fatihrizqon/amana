@@ -1,7 +1,7 @@
 <main class="mdl-layout__content">
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col" align="center">
-    <div class="data-rental-container mdl-shadow--2dp">
+    <div class="data-white-container mdl-shadow--2dp">
       <br>
       <label for=""></label><b>Data :</b> 
       <?php 
@@ -10,16 +10,17 @@
       <ul class="demo-list-control mdl-list">
         <li class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
-            <i class="material-icons  mdl-list__item-avatar">person</i>
+          <i class="material-icons green-tea-txt">account_box</i>
             Jumlah Rental :
           </span>
           <span class="mdl-list__item-secondary-action">
           <?php echo $this->db->count_all('rental'); ?>
           </span>
         </li>
+
         <li class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
-            <i class="material-icons  mdl-list__item-avatar">money</i>
+          <i class="material-icons green-tea-txt">account_balance</i>
             Total Pemasukan :
           </span>
           <span class="mdl-list__item-secondary-action">
@@ -30,7 +31,7 @@
     </div>
   </div>
   <div class="mdl-cell mdl-cell--4-col" align="center">
-  <div class="data-rental-container mdl-shadow--2dp">
+  <div class="data-white-container mdl-shadow--2dp">
       <br>
       <label for=""></label><b>Data :</b> 
       <?php 
@@ -83,19 +84,19 @@
       <tbody>
       <?php foreach($rental as $data){?>
       <tr align="center">
-      <td><?php echo $data['id_rental']; ?> </td>
-      <td><?php echo $data['nama']; ?> </td>
-      <td><?php echo $data['telepon']; ?> </td>
-      <td><?php
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['id_rental']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['nama']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['telepon']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php
       echo $data['tipe'];
       echo ' '.$data['warna'];
       echo ' '.$data['plat_nomor'];
       echo ' '.$data['transmisi'];
       ?> </td>
-      <td><?php echo $data['tanggal_pesan']; ?> </td>
-      <td><?php echo $data['tanggal_sewa']; ?> </td>
-      <td><?php echo $data['tanggal_kembali']; ?> </td>
-      <td><?php
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['tanggal_pesan']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['tanggal_sewa']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['tanggal_kembali']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php
 
       $tanggal_sewa = new DateTime($data['tanggal_sewa']);
       $tanggal_kembali = new DateTime($data['tanggal_kembali']);
@@ -132,16 +133,16 @@
       echo $totalPayment;
       ?> </td>
 
-      <td>
+      <td class="mdl-data-table__cell--non-numeric">
       <?php echo $day." Hari ".$hours." Jam ";?>
       </td>
 
-      <td><?php
+      <td class="mdl-data-table__cell--non-numeric"><?php
       $payment = $totalPayment-$data['pembayaran'];
       echo $payment;
       ?> </td>
 
-      <td><?php
+      <td class="mdl-data-table__cell--non-numeric"><?php
       if($data['pembayaran']==0){
           echo "Belum Lunas";
       }elseif($payment!=0){
@@ -153,8 +154,8 @@
           echo "Unknown";
       }
       ?> </td>
-      <td><?php echo $data['id_users']; ?> </td>
-      <td> <a href="<?php echo base_url().'rental/read/'.$data['id_rental'];  ?>"> Edit </a> | <a href="<?php echo base_url().'rental/delete/'.$data['id_rental'];  ?>">Hapus</a> </td>
+      <td class="mdl-data-table__cell--non-numeric"><?php echo $data['id_users']; ?> </td>
+      <td class="mdl-data-table__cell--non-numeric"> <a href="<?php echo base_url().'rental/read/'.$data['id_rental'];  ?>"> Edit </a> | <a href="<?php echo base_url().'rental/delete/'.$data['id_rental'];  ?>">Hapus</a> </td>
       </tr>
       <?php } ?>
       </tbody>
@@ -162,12 +163,12 @@
     </div>
   </div>
   <div class="mdl-cell mdl-cell--6-col" align="center">
-    <div class="data-rental-container">
+    <div class="data-white-container">
       Bulan Kemarin
     </div>
   </div>
   <div class="mdl-cell mdl-cell--6-col" align="center">
-    <div class="data-rental-container">
+    <div class="data-white-container">
       Daftar Laporan
     </div>
   </div>
