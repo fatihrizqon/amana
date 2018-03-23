@@ -74,20 +74,21 @@ class Rental_model extends CI_Model {
     }
 
     public function weekCount(){
-        $lastWeek = (new DateTime("now"))->sub(new DateInterval('P7D'))->format('Y-m-d');
+        $last_week = (new DateTime('now'))->sub(new DateInterval('P7D'))
+                                          ->format('Y-m-d');
         $this->db->select('COUNT(*) as total');
         $this->db->from('rental'); 
-        $this->db->where('DATE(tanggal_sewa)',$last_week);
+        $this->db->where('tanggal_sewa >=',$last_week);
         $query = $this->db->get();
         return $query->result_array();
     }
 
     public function week(){
-        $date = new DateTime("now");
-        $last_week = date('Y-m-d',time()-(7*86400));
+        $last_week = (new DateTime('now'))->sub(new DateInterval('P7D'))
+                                          ->format('Y-m-d');
         $this->db->select('*');
         $this->db->from('rental'); 
-        $this->db->where('DATE(tanggal_sewa)', $last_week);
+        $this->db->where('tanggal_sewa >=',$last_week);
         $query = $this->db->get();
         return $query->result_array();
     }
