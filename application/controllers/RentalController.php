@@ -13,10 +13,13 @@ class RentalController extends CI_Controller {
 
   public function index()
 	{
-    $data['rental'] = $this->Rental_model->getData();
+    $data['rental']     = $this->Rental_model->getData();
     $data['kendaraan']  = $this->Kendaraan_model->getData();
-    $data['today']  = $this->Rental_model->today();
-    $data['title']  = "Rental";
+    $data['todayCount'] = $this->Rental_model->todayCount();
+    $data['today']      = $this->Rental_model->today();
+    $data['weekCount']  = $this->Rental_model->weekCount();
+    $data['week']       = $this->Rental_model->week();
+    $data['title']      = "Administrasi Rental";
     $this->load->view('templates/header',$data);
     $this->load->view('templates/navbar',$data);
     $this->load->view('rental/index', $data);
@@ -25,7 +28,7 @@ class RentalController extends CI_Controller {
 
   public function report(){
     $data['rental'] = $this->Rental_model->getData();
-    $data['title']  = "Data Laporan";
+    $data['title']  = "Data Laporan Rental";
     $this->load->view('templates/header',$data);
     $this->load->view('templates/navbar',$data);
     $this->load->view('rental/index', $data);

@@ -14,7 +14,7 @@ class HomeController extends CI_Controller {
 	public function index()
 	{
         $data['rental'] = $this->Rental_model->getData();
-        $data['kendaraan'] = $this->Kendaraan_model->getData();
+        $data['kendaraan'] = $this->Kendaraan_model->getReadyCar();
         $data['title'] = "Beranda";
         $this->load->view('templates/header',$data);
 		$this->load->view('templates/navbar',$data);

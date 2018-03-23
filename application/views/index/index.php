@@ -28,7 +28,7 @@
               <?php foreach($kendaraan as $data){ ?>
                 <md-option value="<?php echo $data['id_kendaraan']; ?>">
                   <?php
-                  if($data['harga']!=0){
+                  if($data['harga']!=0 ){
                     echo $data['tipe'];
                     echo ' '.$data['warna'];
                     echo ' '.$data['plat_nomor'];

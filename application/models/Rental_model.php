@@ -37,15 +37,15 @@ class Rental_model extends CI_Model {
     }
 
     public function update($id_rental){
+        $data = array(
+            'nama' => $this->input->post('nama'),
+            'telepon' => $this->input->post('telepon'),
+            'pembayaran' => $this->input->post('pembayaran'),
+            'tanggal_kembali' => $this->input->post('tanggal_kembali'),
+        );
 
-    $data = array(
-        'nama' => $this->input->post('nama'),
-        'telepon' => $this->input->post('telepon'),
-        'pembayaran' => $this->input->post('pembayaran'),
-        'tanggal_kembali' => $this->input->post('tanggal_kembali'),
-    );
-    $this->db->where('id_rental', $id_rental);
-    return $this->db->update('rental', $data);
+        $this->db->where('id_rental', $id_rental);
+        return $this->db->update('rental', $data);
     }
 
     public function delete($id_rental){
@@ -54,25 +54,41 @@ class Rental_model extends CI_Model {
         return;
     }
 
+    public function todayCount(){
+        $date = new DateTime("now");
+        $current_date = $date->format('Y-m-d ');
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('rental'); 
+        $this->db->where('DATE(tanggal_sewa)',$current_date);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     public function today(){
-        $date = date('Y-m-d H:i:s');
-        $this->db->where('tanggal_sewa', $date);
-        $this->db->get('rental');
-        return;
-        
+        $date = new DateTime("now");
+        $date = $date->format('Y-m-d');
+        $this->db->select('*');
+        $this->db->from('rental'); 
+        $this->db->like('tanggal_sewa', $date);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function weekCount(){
+        $lastWeek = (new DateTime("now"))->sub(new DateInterval('P7D'))->format('Y-m-d');
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('rental'); 
+        $this->db->where('DATE(tanggal_sewa)',$last_week);
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function week(){
-        // Get Last Month
-        $date = new DateTime();
-        $date->modify("last day of previous week");
-        $last_week = $date->format("Y-m-d");
-
-        // Your Query
+        $date = new DateTime("now");
+        $last_week = date('Y-m-d',time()-(7*86400));
         $this->db->select('*');
-        $this->db->from('rental');
-        $this->db->where('tanggal_sewa', $last_week);
+        $this->db->from('rental'); 
+        $this->db->where('DATE(tanggal_sewa)', $last_week);
         $query = $this->db->get();
-        return $query->result();
+        return $query->result_array();
     }
 }

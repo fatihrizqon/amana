@@ -14,7 +14,11 @@
             Jumlah Rental :
           </span>
           <span class="mdl-list__item-secondary-action">
-          <?php echo $this->db->count_all('rental'); ?>
+          <?php 
+          foreach($todayCount as $data){
+            echo $data['total'];
+          }
+          ?>
           </span>
         </li>
 
@@ -24,36 +28,52 @@
             Total Pemasukan :
           </span>
           <span class="mdl-list__item-secondary-action">
-          <?php echo "Rp."."200000".",-"; ?>
+          <?php
+          $income = 0;
+          foreach($today as $data){
+            $income += $data['pembayaran'];
+          }
+          echo $income;
+          ?>
           </span>
         </li>
       </ul>
     </div>
   </div>
+
   <div class="mdl-cell mdl-cell--4-col" align="center">
   <div class="data-white-container mdl-shadow--2dp">
       <br>
       <label for=""></label><b>Data :</b> 
-      <?php 
-      echo date('l jS \of F Y h:i:s A'); 
-      ?></p>
+          Minggu Ini
+      
       <ul class="demo-list-control mdl-list">
         <li class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
-            <i class="material-icons  mdl-list__item-avatar">person</i>
+          <i class="material-icons green-tea-txt">account_box</i>
             Jumlah Rental :
           </span>
           <span class="mdl-list__item-secondary-action">
-          <?php echo $this->db->count_all('rental'); ?>
+          <?php
+          foreach($weekCount as $data){
+            echo $data['total'];
+          }
+          ?>
           </span>
         </li>
         <li class="mdl-list__item">
           <span class="mdl-list__item-primary-content">
-            <i class="material-icons  mdl-list__item-avatar">money</i>
+          <i class="material-icons green-tea-txt">account_balance</i>
             Total Pemasukan :
           </span>
           <span class="mdl-list__item-secondary-action">
-          <?php echo "Rp."."200000".",-"; ?>
+          <?php
+          $income = 0;
+          foreach($week as $data){
+            $income += $data['pembayaran'];
+          }
+          echo $income;
+          ?>
           </span>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 <header class="mdl-layout__header dark-green-tea mdl-shadow--2dp">
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title">AMANA TRANSPORT</span>
+    <span class="mdl-layout-title">myApp</span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
